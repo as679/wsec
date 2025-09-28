@@ -108,11 +108,6 @@ kubectl get pod -n istio-system
 #istiod-7d4f74889d-jzc7b                1/1     Running   0          15s
 ```
 
-> **INFO** The patch below will enable preserving the true client IP. Without it we would see the local IP address of the external load balancer in the logs
-```sh
-kubectl patch svc istio-ingressgateway -n istio-system \
-  -p '{"spec":{"externalTrafficPolicy":"Local"}}'
-```
 #### Deploy a sample application
 
 1. We install the application and verify locally
